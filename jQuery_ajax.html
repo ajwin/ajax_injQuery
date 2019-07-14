@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery_ajax</title>
+</head>
+<body>
+  <h1></h1>  
+  <input type="button" value="请按我获取数据">
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+        $("input").click(function(){
+            //点击发送Ajax请求
+            $.get("a.json",function(data){
+                var a = data.content[2].name;
+                $("h1").html(a);    
+            })
+        })
+  </script>
+</body>
+</html>
