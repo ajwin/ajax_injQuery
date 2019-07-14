@@ -1,3 +1,4 @@
+# ajax_injQuery
 ## jQuery中的Ajax
 
 ### 复习Ajax怎么用jQuery来实现
@@ -20,6 +21,27 @@ $.ajax("b.json",{
         alert(errorThrown);
     }
 })
+```
+```JS
+//JS ajax模板再次复习一下啊
+var xhr = new XMLHttpRequest();	//不兼容，能力检测
+
+xhr.onreadystatechange = function(){
+	if(xhr.readyState == 4){
+		if(xhr.status >= 200 && xhr.status < 300 || xhr.status == 304){
+			//正面的HTTP状态码
+			alert(xhr.responseText);
+}
+xhr.open("post","check.php",true);
 
 
-```# ajax_injQuery
+//ie中的Ajax兼容问题，进行能力检测
+
+if(window.XMLHttpRequest){
+				var xhr = new XMLHttpRequest();
+}else{
+    var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+```
+
